@@ -8,7 +8,7 @@ environment:
       SHARP_IGNORE_GLOBAL_LIBVIPS: '1'
 
 install:
-  - ps: Install-Product node $env:nodejs_version x64
+  - ps: Update-NodeJsInstallation (Get-NodeJsLatestBuild $env:nodejs_version)
 #  - ps: npm install -g "npm@${env:npm_version}"
   - npm config set script-shell "C:\\Program Files\\git\\bin\\bash.exe"
   - npm config set prefer-offline true
